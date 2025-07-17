@@ -110,7 +110,7 @@ function ChampionList() {
             </header>
 
             <SummonerNameField onSummonerSet={setSummoner}/>
-
+            <div>{championHasWon.length}/{ChampionList.length}</div>
             <ChampionListWrapper>
                 {championList.map((champion) => {
 
