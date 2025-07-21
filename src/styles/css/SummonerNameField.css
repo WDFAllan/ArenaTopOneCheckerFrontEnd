@@ -1,0 +1,28 @@
+.summonerNameBox {
+    position: relative;
+    display: inline-block;
+    width: 25%;
+}
+
+.inputSummonerName {
+    width: 100%;
+    font-size: 11pt;
+    border-radius: 5px;
+    background-color: #212170;
+    border: none;
+    padding: 10px 35px 10px 10px; /* padding-right augmenté pour laisser la place à la loupe */
+    color: white;
+    box-sizing: border-box;
+}
+
+.searchSummoner {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+}

@@ -1,0 +1,52 @@
+.topOneBar {
+    position: relative;
+    width: 30%;
+    margin: 2% auto 0 auto;
+    height: 20px;
+    background-color: #0d0d37;
+    border-radius: 10px;
+}
+
+.topOneProgress {
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #2828c1;
+}
+
+.topOneMaxProgress {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%)translateX(160%);
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.progress-markers {
+    width: 30%;
+    position: relative;
+    margin: auto;
+    height: 20px;
+}
+
+.marker {
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #ffffff;
+}
+.god{
+    left:35%;
+}
+.max{
+    left: 100%
+}
+.palier-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ffffff;
+    z-index: 2;
+}
