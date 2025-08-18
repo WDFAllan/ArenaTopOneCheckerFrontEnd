@@ -4,6 +4,7 @@ import SummonerNameField from "../SummonerNameFieldComponent/SummonerNameField";
 import ChampionGridComponent from "./ChampionGridComponent";
 import "../../styles/css/ChampionList.css";
 import TopOneBar from "../TopOneCounter/TopOneBar";
+import ChampionResearchBarComponent from "../ChampionResearchBar/ChampionResearchBarComponent";
 
 type Champion = {
     id: number;
@@ -20,6 +21,7 @@ function ChampionList() {
     const [matchesId, setMatchesId] = useState<string[]>([]);
     const [championList, setChampionList] = useState<Champion[]>([]);
     const [championHasWon, setChampionHasWon] = useState<number[]>([]);
+    const [championName, setChampionName] = useState("");
 
     useEffect(() => {
         const fetchAllChampionList = async () => {
@@ -79,6 +81,10 @@ function ChampionList() {
         fetchChampionHasWon();
     }, [matchesId]);
 
+    const filteredChampions = championList.filter((champion) =>
+        champion.name.toLowerCase().startsWith(championName.toLowerCase())
+    );
+
     return (
         <div>
             <header className="header">
@@ -87,9 +93,9 @@ function ChampionList() {
 
             <SummonerNameField onSummonerSet={setSummoner} />
             <TopOneBar topOneCount={championHasWon.length} championCount={championList.length}/>
+            <ChampionResearchBarComponent search={championName} onSearchChange={setChampionName}/>
 
-
-            <ChampionGridComponent champions={championList} championsHasWon={championHasWon} />
+            <ChampionGridComponent champions={filteredChampions} championsHasWon={championHasWon} />
         </div>
     );
 }

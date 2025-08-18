@@ -1,3 +1,18 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.MainPage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* toute la hauteur de l’écran */
+}
+
+.Champion-list {
+    flex: 1; /* occupe tout l’espace restant */
+}
+
 footer{
     padding-top: 2%;
     color: #97adff;
@@ -16,4 +31,3 @@ footer{
     font-size: 80%;
     text-align: justify;
 }
-

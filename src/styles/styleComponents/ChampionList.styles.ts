@@ -9,7 +9,7 @@ export const ChampionListWrapper = styled.div`
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-left: 300px;
     padding-right: 300px;
 

@@ -1,0 +1,19 @@
+.championNameBox {
+    position: relative;
+    display: inline-block;
+    width: 10%;
+    margin-left: 50%;
+    margin-top:2%;
+    margin-bottom: 1%;
+}
+
+.inputChampionName {
+    width: 100%;
+    font-size: 11pt;
+    border-radius: 5px;
+    background-color: #212170;
+    border: none;
+    padding: 10px 35px 10px 10px; /* padding-right augmenté pour laisser la place à la loupe */
+    color: white;
+    box-sizing: border-box;
+}
