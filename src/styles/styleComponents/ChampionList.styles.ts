@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import { motion } from "framer-motion";
 
 type ChampionImageProps = {
     hasWin: boolean;
 }
 
-export const ChampionListWrapper = styled.div`
+export const ChampionListWrapper = styled(motion.div)`
     display: flex;
     flex-wrap: wrap;
     gap: 30px;

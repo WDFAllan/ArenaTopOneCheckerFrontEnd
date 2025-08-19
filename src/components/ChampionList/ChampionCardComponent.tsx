@@ -10,7 +10,7 @@ type Props = {
 
 function ChampionCardComponent ({ name, hasWin }:Props)  {
     return (
-        <ChampionCard key={name}>
+        <ChampionCard key={name} >
             <ChampionImage src={`/champions/${name}.jpg`} hasWin={hasWin} />
             <ChampionName>{name}</ChampionName>
         </ChampionCard>

@@ -1,5 +1,7 @@
 // src/components/ChampionGridComponent.tsx
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import { ChampionListWrapper } from "../../styles/styleComponents/ChampionList.styles";
 import ChampionCardComponent from "./ChampionCardComponent";
 
@@ -18,14 +20,25 @@ type Props = {
 function ChampionGridComponent({ champions, championsHasWon }:Props){
     return (
         <ChampionListWrapper>
+            <AnimatePresence mode="popLayout">
             {champions.map((champion) => (
-                <ChampionCardComponent
+                <motion.div
                     key={champion.name}
-                    name={champion.name}
-                    id={champion.id}
-                    hasWin={championsHasWon.includes(champion.id)}
-                />
+                    initial={{ opacity: 0.5, scale: 0.9, y: 10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.9, y: -10 }}
+                    transition={{ duration: 0.15 }}
+                >
+                    <ChampionCardComponent
+                        key={champion.name}
+                        name={champion.name}
+                        id={champion.id}
+                        hasWin={championsHasWon.includes(champion.id)}
+
+                    />
+                </motion.div>
             ))}
+            </AnimatePresence>
         </ChampionListWrapper>
     );
 }
