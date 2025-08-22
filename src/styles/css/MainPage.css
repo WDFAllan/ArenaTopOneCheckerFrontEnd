@@ -9,6 +9,22 @@ html, body {
     min-height: 100vh; /* toute la hauteur de l’écran */
 }
 
+.MainPage::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* hauteur de l'image */
+    z-index: -1;
+
+    /* Image avec dégradé */
+    background:
+            linear-gradient(to bottom, rgba(0,0,0,0.75) 10%, rgba(18,18,76,1) 100%),
+            url("../../../public/background/1347657.jpeg") no-repeat top center;
+    background-size: 100% auto; /* largeur 100%, hauteur auto */
+}
+
 .Champion-list {
     flex: 1; /* occupe tout l’espace restant */
 }

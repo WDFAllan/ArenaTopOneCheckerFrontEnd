@@ -1,6 +1,5 @@
-import {Search} from "lucide-react";
 import "../../styles/css/ChampionNameField.css";
-import {useState} from "react";
+import Input from '@mui/joy/Input';
 
 type Props = {
     search: string;
@@ -11,12 +10,14 @@ function ChampionResearchBarComponent({search,onSearchChange}:Props){
 
     return (
         <div className="championNameBox">
-            <input
-                className="inputChampionName"
-                type="text"
+            <Input
                 placeholder="Find a champion..."
+                size="sm"
+                color="primary"
+                variant="solid"
                 value={search}
                 onChange={(e) => onSearchChange(e.target.value)}
+
             />
         </div>
     )

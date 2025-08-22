@@ -3,8 +3,8 @@ import axios from "axios";
 import SummonerNameField from "../SummonerNameFieldComponent/SummonerNameField";
 import ChampionGridComponent from "./ChampionGridComponent";
 import "../../styles/css/ChampionList.css";
-import TopOneBar from "../TopOneCounter/TopOneBar";
 import ChampionResearchBarComponent from "../ChampionResearchBar/ChampionResearchBarComponent";
+import ChampionCounterComponent from "../ChampionCounter/ChampionCounterComponent";
 
 type Champion = {
     id: number;
@@ -92,7 +92,7 @@ function ChampionList() {
             </header>
 
             <SummonerNameField onSummonerSet={setSummoner} />
-            <TopOneBar topOneCount={championHasWon.length} championCount={championList.length}/>
+            <ChampionCounterComponent topOneCount={championHasWon.length} />
             <ChampionResearchBarComponent search={championName} onSearchChange={setChampionName}/>
 
             <ChampionGridComponent champions={filteredChampions} championsHasWon={championHasWon} />

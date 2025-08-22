@@ -1,6 +1,7 @@
 import {useState} from "react";
 import "../../styles/css/SummonerNameField.css";
 import { Search } from "lucide-react";
+import Input from '@mui/joy/Input';
 
 type Props = {
     onSummonerSet: (summonerName: string) => void;
@@ -17,13 +18,16 @@ function SummonerNameField({onSummonerSet}:Props) {
 
     return (
         <div className="summonerNameBox">
-            <input
-                className="inputSummonerName"
-                type="text"
+            <Input
+                disabled={false}
                 placeholder="Summoner's name ex:DarkPlayer#EUW"
+                size="lg"
+                color="primary"
+                variant="solid"
                 value={summonerName}
                 onChange={(e) => setSummonerName(e.target.value)}
             />
+
             <button className="searchSummoner" onClick={handleClick}><Search size={18} /></button>
         </div>
     )
