@@ -3,13 +3,23 @@ const palette = {
 
     primary: {
         solidBg: '#212170',
-        solidBorder: '#29298a',
-        solidHoverBg: '#26266c',
-        solidHoverBorder: '#121240',
-        solidActiveBg: '#3e3ea3',
-        solidActiveBorder: '#5454ac',
+        solidBorder: '#212170',
+        solidHoverBg: '#212170',
+        solidHoverBorder: '#212170',
+        solidActiveBg: '#212170',
+        solidActiveBorder: '#212170',
         solidDisabledBg: '#212170',
         solidDisabledBorder: '#212170',
+
+        softColor: '#212170',
+        softBg: '#212170',
+        softBorder: '#212170',
+        softHoverBg: '#212170',
+        softHoverBorder: '#212170',
+        softActiveBg: '#212170',
+        softActiveBorder: '#212170',
+        softDisabledBg: '#212170',
+        softDisabledBorder: '#212170',
     },
     neutral: {
         solidBg: '#6c757d',
@@ -72,7 +82,12 @@ const palette = {
         solidActiveBorder: '#25cff2',
         solidDisabledBg: '#0dcaf0',
         solidDisabledBorder: '#0dcaf0',
+    },
+    loading:{
+        solidColor: '#ffffff',
+        softColor: '#ffffff',
     }
+
 }
 
 const theme = extendTheme({

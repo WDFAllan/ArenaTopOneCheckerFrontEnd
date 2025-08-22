@@ -15,8 +15,16 @@ type Props = {
 
 function ChampionCardComponent ({ name, hasWin }:Props)  {
     return (
-
-        <Card color="primary" variant="solid" sx={{width:150}}>
+        <Card
+            color="primary"
+            variant="solid"
+            sx={{
+                width:150,
+                transition:"transform 0.3s ease",
+                "&:hover":{
+                    transform:"scale(1.05)",
+                }
+            }}>
             <AspectRatio variant="plain" minHeight="150px" sx={{borderRadius:'lg'}}>
                 <ChampionImage src={`/champions/${name}.jpg`} hasWin={hasWin} />
             </AspectRatio>
@@ -26,11 +34,6 @@ function ChampionCardComponent ({ name, hasWin }:Props)  {
                 </div>
             </CardContent>
         </Card>
-
-        // <ChampionCard key={name} >
-        //     <ChampionImage src={`/champions/${name}.jpg`} hasWin={hasWin} />
-        //     <ChampionName>{name}</ChampionName>
-        // </ChampionCard>
     );
 }
 

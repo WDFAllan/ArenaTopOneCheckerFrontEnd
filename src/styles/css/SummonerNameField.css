@@ -1,7 +1,11 @@
 .summonerNameBox {
     position: relative;
-    width: 25%;
-    margin:0 auto;
+
+    width: 100%;                 /* Occupe toute la largeur du conteneur */
+          /* Espace pour le cercle à droite */
+    text-align: center;          /* Centre le texte dans l’input */
+
+
 }
 
 .searchSummoner {

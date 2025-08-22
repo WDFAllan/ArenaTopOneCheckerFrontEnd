@@ -5,6 +5,7 @@ import ChampionGridComponent from "./ChampionGridComponent";
 import "../../styles/css/ChampionList.css";
 import ChampionResearchBarComponent from "../ChampionResearchBar/ChampionResearchBarComponent";
 import ChampionCounterComponent from "../ChampionCounter/ChampionCounterComponent";
+import LoadingCircleComponent from "../LoadingCircle/LoadingCircleComponent";
 
 type Champion = {
     id: number;
@@ -22,6 +23,7 @@ function ChampionList() {
     const [championList, setChampionList] = useState<Champion[]>([]);
     const [championHasWon, setChampionHasWon] = useState<number[]>([]);
     const [championName, setChampionName] = useState("");
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchAllChampionList = async () => {
@@ -40,12 +42,16 @@ function ChampionList() {
 
     useEffect(() => {
         const fetchPuuid = async () => {
+            setLoading(true);
             try {
                 const puuidResponse = await axios.get(`${apibaseurl}/arena/summoner`, {
                     params: { summonerName: summoner },
                 });
                 setPuuid(puuidResponse.data);
-            } catch {}
+            } catch(err) {
+                console.error("Error fetchPuuid:", err);
+                setLoading(false);
+            }
         };
         fetchPuuid();
     }, [summoner]);
@@ -59,7 +65,10 @@ function ChampionList() {
                     });
                     setMatchesId(response?.data);
                 }
-            } catch {}
+            } catch (err){
+                console.error("Error fetchMatchesId:", err);
+                setLoading(false);
+            }
         };
         fetchMatchesId();
     }, [puuid]);
@@ -76,6 +85,8 @@ function ChampionList() {
                 }
             } catch (err: unknown) {
                 console.error(err);
+            }finally {
+             setLoading(false);
             }
         };
         fetchChampionHasWon();
@@ -85,13 +96,22 @@ function ChampionList() {
         champion.name.toLowerCase().includes(championName.toLowerCase())
     );
 
+
     return (
         <div>
             <header className="header">
                 <h1 className="title">Arena Top 1 Checker</h1>
             </header>
+            <div className="summonerSearch">
+                <SummonerNameField onSummonerSet={setSummoner} />
+                <div className="loadingCircle">
+                    {loading && (
+                        <LoadingCircleComponent/>
+                    )}
+                </div>
 
-            <SummonerNameField onSummonerSet={setSummoner} />
+            </div>
+
             <ChampionCounterComponent topOneCount={championHasWon.length} />
             <ChampionResearchBarComponent search={championName} onSearchChange={setChampionName}/>
 

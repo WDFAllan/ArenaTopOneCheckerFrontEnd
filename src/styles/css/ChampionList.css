@@ -10,3 +10,19 @@
     letter-spacing: 2px;
     margin-top: 40px;
 }
+
+.summonerSearch{
+    position: relative;          /* Permet de positionner le cercle par rapport à ce conteneur */
+    width: 400px;                /* Largeur fixe ou max-width selon ton design */
+    margin: 0 auto;
+}
+
+.loadingCircle{
+    position: absolute;
+    right: -25px;                 /* Décalage depuis le bord droit du conteneur */
+    top: 50%;
+    transform: translateY(-100%); /* Centre verticalement par rapport à l’input */
+    width: 20px;
+    height: 20px;
+
+}
