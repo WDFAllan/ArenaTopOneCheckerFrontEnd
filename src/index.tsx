@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { CssVarsProvider } from "@mui/joy/styles";
+import theme from "./styles/theme/theme";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -9,8 +11,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet"/>
-        <App/>
+        <CssVarsProvider theme={theme}>
+            <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@400;500&family=Share+Tech&display=swap" rel="stylesheet"/>
+
+            <App/>
+        </CssVarsProvider>
+
     </React.StrictMode>
 );
 
