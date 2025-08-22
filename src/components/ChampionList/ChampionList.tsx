@@ -82,13 +82,13 @@ function ChampionList() {
     }, [matchesId]);
 
     const filteredChampions = championList.filter((champion) =>
-        champion.name.toLowerCase().startsWith(championName.toLowerCase())
+        champion.name.toLowerCase().includes(championName.toLowerCase())
     );
 
     return (
         <div>
             <header className="header">
-                <h1 className="title">Arena Top One Checker</h1>
+                <h1 className="title">Arena Top 1 Checker</h1>
             </header>
 
             <SummonerNameField onSummonerSet={setSummoner} />
